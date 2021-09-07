@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<script src="../jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="../css/frame.css">
+</head>
+<body>
+
+
+<ul>
+  
+	<li><a  href="../../components/senaraikuiz.php" target="body">Senarai Kuiz</a></li>
+	<!--<li><a  href="../../components/cariankeputusan.php"target="body">Semak Keputusan</a></li>-->
+	
+  <li><a href="../../components/logout_murid.php" target="_top">Keluar</a></li>
+</ul>
+
+
+<script type="text/javascript" >
+
+
+	
+
+	/** This checks if jQuery works on your browser
+
+	window.onload= function(){
+	
+	if (window.jQuery){
+	
+		alert("It works!");
+	}else{
+		alert("no, it doesn't");
+	
+	}
+	
+	}*/
+		
+       $("li").click(function(){
+	   $("li").removeClass("active");
+	   $(this).addClass("active");
+	   
+	   });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
