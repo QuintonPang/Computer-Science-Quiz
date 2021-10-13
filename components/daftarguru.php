@@ -31,7 +31,7 @@ include('link_db.php');
   </div>
 
   <div class="container">
-    <a href="index.php"><button type="button" class="cancelbtn">Cancel</button></a>
+    <a href="/kuizsainskomputer/index.php"><button type="button" class="cancelbtn">Cancel</button></a>
     
   </div>
 </form>
