@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2005 at 03:12 PM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 5.6.32
+-- Generation Time: Oct 13, 2021 at 04:06 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -39,8 +38,8 @@ CREATE TABLE `guru` (
 --
 
 INSERT INTO `guru` (`idguru`, `katalaluan`, `namaguru`) VALUES
-(1, 'wfa', 'afes'),
-(2, 'oadjewi', 'ka');
+(13, 'adila', 'adila'),
+(14, 'adibah', 'adibah\r\n');
 
 -- --------------------------------------------------------
 
@@ -58,8 +57,7 @@ CREATE TABLE `kelas` (
 --
 
 INSERT INTO `kelas` (`idkelas`, `namakelas`) VALUES
-(1, '5 sapphire'),
-(2, '5 ruby');
+(3, '5 Sapphire');
 
 -- --------------------------------------------------------
 
@@ -77,8 +75,8 @@ CREATE TABLE `kuiz` (
 --
 
 INSERT INTO `kuiz` (`idkuiz`, `namakuiz`) VALUES
-(1, 'htmll'),
-(2, 'phpp');
+(3, 'C++'),
+(4, 'html');
 
 -- --------------------------------------------------------
 
@@ -99,19 +97,7 @@ CREATE TABLE `murid` (
 --
 
 INSERT INTO `murid` (`idmurid`, `katalaluan`, `namamurid`, `idkelas`, `nokp`) VALUES
-(1, 'naspfnro', 'quinton', '1', '0'),
-(2, 'nodwadw', 'ali', '1', '0'),
-(3, 'cakc', 'abu', '1', '0'),
-(4, 'dawajdjwp', 'adkjjd', '1', '0'),
-(5, 'wowwq', 'ojddqd', '2', '2147483647'),
-(6, 'ewifewf', 'test', '2', '2147483647'),
-(7, 'qqw', 'test', '2', '2147483647'),
-(8, 'qwqad', 'test', '2', '2147483647'),
-(9, 'l;amd', 'qrljdQ', '1', '2147483647'),
-(10, 'swss', 'wefDE', '1', '2147483647'),
-(11, 'sew', 'erferq', '2', '2147483647'),
-(12, 'ascjsja', 'qiwqjwo', '2', '2147483647'),
-(13, 'askclksa', 'dwqjd', '1', '2147483647');
+(14, 'quinton', 'quinton', '3', '080808080121');
 
 -- --------------------------------------------------------
 
@@ -131,11 +117,7 @@ CREATE TABLE `penilaian` (
 --
 
 INSERT INTO `penilaian` (`idpenilaian`, `peratus`, `idkuiz`, `idmurid`) VALUES
-(2, 100, 1, 0),
-(3, 50, 1, 0),
-(4, 50, 1, 1),
-(5, 50, 1, 2),
-(6, 50, 1, 1);
+(7, 0, 3, 14);
 
 -- --------------------------------------------------------
 
@@ -156,8 +138,8 @@ CREATE TABLE `soalan` (
 --
 
 INSERT INTO `soalan` (`idsoalan`, `soalan`, `jawapan`, `idguru`, `idkuiz`) VALUES
-(4, 'rsmfo', 'hello', 2, 1),
-(5, 'oifeasi', 'hello', 1, 1);
+(6, 'Apakah syntax untuk umpukan nilai ke dalam variable dalam c++?', 'cin', 13, 3),
+(7, 'Apakah cout', 'Papar', 13, 3);
 
 --
 -- Indexes for dumped tables
@@ -207,37 +189,37 @@ ALTER TABLE `soalan`
 -- AUTO_INCREMENT for table `guru`
 --
 ALTER TABLE `guru`
-  MODIFY `idguru` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idguru` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `idkelas` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idkelas` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `kuiz`
 --
 ALTER TABLE `kuiz`
-  MODIFY `idkuiz` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idkuiz` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `murid`
 --
 ALTER TABLE `murid`
-  MODIFY `idmurid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idmurid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `penilaian`
 --
 ALTER TABLE `penilaian`
-  MODIFY `idpenilaian` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idpenilaian` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `soalan`
 --
 ALTER TABLE `soalan`
-  MODIFY `idsoalan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idsoalan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

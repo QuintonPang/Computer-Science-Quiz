@@ -5,6 +5,7 @@ session_start();
 
 //remove variable from session
 unset($_SESSION['username_guru']);
+unset($_SESSION['id_kuiz']);
 ?>
 <html>
 

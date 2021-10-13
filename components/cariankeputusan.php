@@ -103,13 +103,8 @@ span.psw {
 	//set loop within number of data
 	while ($row=mysqli_fetch_array($pilihstatus))
 	{
-		
-		    //select according to id from first to last
-			//SAMBUNG REKOD YANG BERKAITAN
-			$datakuiz=mysqli_query($conn,"select * from kuiz where idkuiz='$no'");
-			$infokuiz=mysqli_fetch_array($datakuiz);
 	
-			 echo "<option value='".$infokuiz['idkuiz']."'>".$infokuiz['namakuiz']."</option>";
+			 echo "<option value='".$row['idkuiz']."'>".$row['namakuiz']."</option>";
 
 	
 	$no++;}
@@ -141,13 +136,9 @@ span.psw {
 	//set loop within number of data
 	while ($row=mysqli_fetch_array($pilihstatus_murid))
 	{
-		
-		    //select according to id from first to last
-			//SAMBUNG REKOD YANG BERKAITAN
-			$datamurid=mysqli_query($conn,"select * from murid where idmurid='$no2'");
-			$infomurid=mysqli_fetch_array($datamurid);
 	
-			 echo "<option value='".$infomurid['idmurid']."'>".$infomurid['namamurid']."</option>";
+	
+			 echo "<option value='".$row['idmurid']."'>".$row['namamurid']."</option>";
 
 	
 	$no2++;}

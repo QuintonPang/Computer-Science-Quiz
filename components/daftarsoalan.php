@@ -102,14 +102,18 @@
 		<?php echo"
 		<script>
 						Object.values($('#guruOption')).map(option=>{
-							if(option.text==='".$_SESSION['username_guru']."') $(this).attr('selected');
+							if(option.text==='".$_SESSION['username_guru']."') $(option).attr('selected',true);
 						});
 		</script>
 		<script>
 						
 						Object.values($('#kuizOption')).map(option=>{
-							if(option.value==='".$_SESSION['id_kuiz']."') $(this).attr('selected');
+							if(option.value==='".$_SESSION['id_kuiz']."'){
+								$(option).attr('selected',true);
+							}
 						});
+
+						
 				
 		</script>"
 		?>

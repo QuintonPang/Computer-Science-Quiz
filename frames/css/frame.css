@@ -23,11 +23,23 @@ li a {
     text-decoration: none;
 }
 
-li a:hover:not(.active) {
+li:hover:not(.active):not(.btn-logout) {
     background-color: #111;
 }
 
 .active {
     background-color: #4CAF50;
 }
-S
+
+.active:hover {
+    background-color: rgb(119, 224, 123);
+}
+
+.btn-logout{
+    background-color: red;
+}
+
+
+.btn-logout:hover{
+    background-color: rgb(240, 69, 69) !important;
+}

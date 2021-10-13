@@ -5,7 +5,7 @@ form {border: 0px solid #f1f1f1;}
 input[type=text], input[type=password], input[type=number] {
   width: 100%;
   padding: 12px 20px;
-  margin: 8px 0;
+  margin: 8px 10;
   display: inline-block;
   border: 0.5px solid #ccc;
   box-sizing: border-box;
@@ -13,7 +13,7 @@ input[type=text], input[type=password], input[type=number] {
 
 input[type=submit]{
   margin-top:20px;
-  margin-bottom:0px;
+  margin-bottom:20px;
 }
 
 img{
@@ -53,6 +53,7 @@ div{
   width: 20%;
   cursor: pointer;
   padding: 14px 20px;
+  margin: 8px 0;
   background-color: #f44336;
 }
 

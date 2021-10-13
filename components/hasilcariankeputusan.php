@@ -7,7 +7,6 @@
 
 <?php
 include ('link_db.php');
-require('pengesahanmurid.php');
 require('pengesahanguru.php');
 ?>
 

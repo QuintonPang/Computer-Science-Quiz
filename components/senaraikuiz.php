@@ -1,6 +1,13 @@
 
 <html>
-
+<head>
+	<style>
+		/* alternating colors in table */
+		tr:nth-child(even){
+			background:lightgray;
+		}
+	</style>
+</head>
 <body>
 
 <?php 
@@ -53,13 +60,13 @@ echo "<td>" .$row["namakuiz"]."</td>";
 
 			
 			echo "<td>" .$bilangansoalan."</td>";
-echo "<td>","<a href=\"borangjawapan.php?id=$idk\">Jawab</a>";
+echo "<td>","<a href=\"borangjawapan.php?id=$idk\">Jawab</a></td></tr>";
 
 $no++; }
 
 echo "</table>";
 echo "<br>";
-echo "<script>alert('".var_dump($_SESSION)."')";
+//echo "<script>alert('".var_dump($_SESSION)."')";
 ?>
 
 

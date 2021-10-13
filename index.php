@@ -1,6 +1,11 @@
 <html>
 	<head>
 		<style>
+
+			html{
+				scroll-behavior: smooth;
+			}
+			
 			#goToTopButton{
 				display: none;
 				position: fixed;
@@ -16,6 +21,7 @@
 				padding: 15px;
 				border-radius: 30px;
 				height: 45px;
+				
 			}
 
 			#goToTopButton:hover {
@@ -62,7 +68,7 @@
 					<img class="d-block w-100" src="https://i.ytimg.com/vi/SzJ46YA_RaA/maxresdefault.jpg" alt="First slide">
 					</div>
 					<div class="carousel-item">
-					<img class="d-block w-100" src="bg.jpg" alt="Second slide">
+					<img class="d-block w-100" src="./imgs/programming.jpg" alt="Second slide">
 					</div>
 					<div class="carousel-item">
 					<img class="d-block w-100" src="https://www.hollandisc.com/-/media/ISC/HollandV2/Blog/Holland_blog_circuit_board_700.jpg?h=450&la=en&mh=450&mw=700&w=700&hash=3E8CFB9BE5D453BA3C1082FD9C9CA07EE449F49F" alt="Third slide">
@@ -108,13 +114,13 @@
 
 				</div>
 
-				<img class='img-fluid w-50 h-100'src='idea.png' alt='idea'>
+				<img class='img-fluid w-50 h-100'src='./imgs/idea.png' alt='idea'>
 
 			</div>	
 
 			<div class='bg-primary w-100 '>
 
-			<img class='img-fluid w-50 h-100 m-'src='book.jpg' alt='book'>
+			<img class='img-fluid w-50 h-100 m-'src='./imgs/book.jpg' alt='book'>
 
 
 				<div class='d-flex flex-column float-right w-50'>
@@ -137,7 +143,7 @@
 			</div>
 		</div>
 
-		<button onclick="topFunction()" id="goToTopButton"><h style='position:relative;bottom:3px;'>^</h3></button>
+		<button onclick="topFunction()" id="goToTopButton"><h3 style='position:relative;bottom:10px;'>↑</h3></button>
 
 		<script>
 			//Get the button
@@ -156,8 +162,8 @@
 
 			// When the user clicks on the button, scroll to the top of the document
 			function topFunction() {
-			document.body.scrollTop = 0;
-			document.documentElement.scrollTop = 0;
+				document.body.scrollTop = 0;
+				document.documentElement.scrollTop = 0;
 			}
 		</script>
 	</body>

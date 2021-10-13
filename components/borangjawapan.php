@@ -3,106 +3,118 @@
 <html>
 <head>
 
-<?php 
-include('link_db.php'); 
-require('pengesahanmurid.php');
-?> 
-<link rel="stylesheet" href="./css/kuizsainskomputer.css">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<?php 
+	include('link_db.php'); 
+	require('pengesahanmurid.php');
+	?> 
+	<link rel="stylesheet" href="./css/kuizsainskomputer.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 </head>
 
 
 <body>
-<div class="container">
-<h2 style="text-align:center">Borang Jawapan Kuiz</h2>
-<?PHP
-include ('link_db.php'); 
-$idkuiz=$_GET['id'];
-$query="SELECT * from soalan WHERE idkuiz='$idkuiz'";
-$result=mysqli_query($conn,$query);
-$num= mysqli_num_rows($result);
+	<div class="container">
+	<h2 style="text-align:center">Borang Jawapan Kuiz</h2>
+	<?PHP
+	include ('link_db.php'); 
+	$idkuiz=$_GET['id'];
+	$query="SELECT * from soalan WHERE idkuiz='$idkuiz'";
+	$result=mysqli_query($conn,$query);
+	$num= mysqli_num_rows($result);
 
-$i=0;
-?>
+	$i=0;
+	?>
 
-<form action="keputusan.php" method="post">
+	<?php 
 
-    <label><b>Nama:</b></label>
-	<select name="idmurid" placeholder="" required>
+	// get name of kuiz
+	$query="SELECT * from kuiz WHERE idkuiz='$idkuiz'";
+	$datakuiz=mysqli_query($conn,$query);
 
-	<option disabled selected value> -- select an option -- </option>
-	<?php
-	$no=1;
-		
-	$pilihstatus=mysqli_query($conn,"select * from murid"); 
-	
-	
-	//$bil_rekod=mysqli_num_rows($pilihstatus);
-	
+	?>
+	<h1><strong>Nama Kuiz: <?php while($row=mysqli_fetch_array($datakuiz))echo $row['namakuiz'] ?></strong></h1>
 
-	
-	while ($row=mysqli_fetch_array($pilihstatus))
-	{
-			//SAMBUNG REKOD YANG BERKAITAN
-			$datamurid=mysqli_query($conn,"select * from murid where idmurid='$no'");
-			$infomurid=mysqli_fetch_array($datamurid);
-	
+	<form action="keputusan.php" method="post">
+
+		<h4>Nama Pelajar:
+			<select name="idmurid" placeholder="" required>
+
+				<option disabled value> -- select an option -- </option>
+				<?php
+					
+					$pilihstatus=mysqli_query($conn,"select * from murid where namamurid='".$_SESSION['username_murid']."'"); 
+					
+					
+					//$bil_rekod=mysqli_num_rows($pilihstatus);
+					
+
+					
+					while ($row=mysqli_fetch_array($pilihstatus))
+					{
+
+						echo "<option selected value='".$row['idmurid']."'>".$row['namamurid']."</option>" ;
+				
+				
+				
+				
+						$no++;
+					} 
+				?>
+			</select> 
+
+		</h4>
 			
+	<br>
+	<br>
 
-    
+	<table align="center" width="95%" border="1">
+		<tr>
+			<th >Soalan:</th>	
+			
+			<th >Jawapan:</th> 
+		</tr>
+		<tr>
+			
+			<?php
+			while ($i < $num) {
+			$show=mysqli_fetch_assoc($result);
+			$soalan=$show['soalan'];
+			$idsoalan=$show['idsoalan'];
+			?>
 
-	echo "<option value='".$infomurid['idmurid']."'>".$infomurid['namamurid']."</option>" ;
-  
-   
-  
- $no++; } ?>
-	</select> 
-        
-<br>
-<br>
+		
+			<?php //echo "<input type='hidden' name='".$idsoalan."'>"?>
+		</tr>
+		<tr>
+			<td scope="col"><div align="center">
+				<?php echo $soalan; ?>
+			</td>
 
-<table align="center" width="386" border="1">
-<tr>
-    <th >Soalan:</th>	<th >Jawapan:</th> <tr>
-	
-	<?php
-while ($i < $num) {
-$show=mysqli_fetch_assoc($result);
-$soalan=$show['soalan'];
-$idsoalan=$show['idsoalan'];
-?>
-
- 
-  <?php //echo "<input type='hidden' name='".$idsoalan."'>"?>
-  
-  <tr>
-    <td scope="col"><div align="center">
-      <?php echo $soalan; ?>
-   </td>
-
-  <td>
-    <?php echo "<textarea cols='75' name='".$idsoalan."'></textarea>" ?>
-  </td>
-  </tr>
+			<td>
+				<?php echo "<textarea rows='10' cols='125' name='".$idsoalan."'></textarea>" ?>
+			</td>
+		</tr>
 
 
 
 
 
-<?PHP
-++$i;
-}
-?>
-<?php echo"<input type='hidden' name='idkuiz'  value='".$idkuiz."'>"?>
+	<?PHP
+	++$i;
+	}
+	?>
+	<?php echo"<input type='hidden' name='idkuiz'  value='".$idkuiz."'>"?>
 
 
-</table>
-<br>
-<input class="button" name="Submit" type="Submit" value="HANTAR JAWAPAN" onclick="popupAlert()"/>
-<br>
-  <button class="cancelbtn"onclick=window.print() >PRINT</button>
-</form> 
-</div>
+	</table>
+	<br>
+	<center>
+		<input class="button" name="submit" type="submit" value="HANTAR JAWAPAN" onclick="popupAlert()"/>
+		<br>
+		<button class="cancelbtn" onclick=window.print() >PRINT</button>
+	</center>
+	</form> 
+	</div>
 </body>
 </html>
