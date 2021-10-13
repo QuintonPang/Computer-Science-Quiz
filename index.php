@@ -1,5 +1,27 @@
 <html>
 	<head>
+		<style>
+			#goToTopButton{
+				display: none;
+				position: fixed;
+				bottom: 20px;
+				right: 30px;
+				z-index: 99;
+				font-size: 18px;
+				border: none;
+				outline: none;
+				background-color: red;
+				color: white;
+				cursor: pointer;
+				padding: 15px;
+				border-radius: 30px;
+				height: 45px;
+			}
+
+			#goToTopButton:hover {
+				background-color: #555;
+			}
+		</style>
 
 
 		<!-- bootstrap@4.6.0 -->
@@ -27,13 +49,7 @@
 		</ul>
 
 		<div class='d-flex w-100 h-100 flex-column align-items-center' >
-	<!--
 
-		<div id="mySidenav">
-		<a href="online.anyflip.com/wexi/bwqu/mobile/index.html" id="bukutekst4">Buku Teks Sains Komputer T4</a>
-		<a href="online.anyflip.com/wexi/pjsx/mobile/index.html" id="bukutekst5">Buku Teks Sains Komputer T5</a>
-		</div>
-	-->
 		<div class='p-3 bg-primary d-flex flex-row justify-content-center'>
 			<div id="carouselExampleIndicators" class="carousel slide w-50" data-ride="carousel">
 				<ol class="carousel-indicators">
@@ -62,7 +78,7 @@
 				</a>
 			</div>
 			<div class='w-50 m-3'>
-				<h3 >	KUIZ SAINS KOMPUTER	</h3>
+				<h3 class='display-4'>	SELAMAT DATANG KE WEB KUIZ SAINS KOMPUTER	</h3>
 				<h3>
 					<small>		
 				Ilmu komputer adalah bidang yang luas yang menyentuh hampir semua perkara yang kita hadapi dalam kehidupan seharian. Setiap aplikasi telefon bimbit dan program komputer bergantung pada kepakaran seorang saintis komputer. Sistem yang mengawal kapal terbang, menguruskan perdagangan saham, memandu peluru berpandu, dan memantau kesihatan juga bergantung pada sains komputer. Ilmuwan komputer membina alat yang membolehkan kita menyelesaikan tugas dengan cekap, tepat, dan selamat.
@@ -102,22 +118,48 @@
 
 
 				<div class='d-flex flex-column float-right w-50'>
-					<h3 class='m-5'>	Buku Rujukan:	</h3>
-						<h3 class='m-5'>
+					<h3 class='mt-4 mb-4 mx-2 display-4'>	Buku Rujukan:	</h3>
+						<h3 class='m-3'>
 								
 							
-							<a class='text-dark' href="https://online.anyflip.com/wexi/pjsx/mobile/index.html">Buku Teks Sains Komputer T5</a>
-							
+							<button class='btn btn-outline-light btn-large'>
+								<a class='text-dark' href="https://online.anyflip.com/wexi/pjsx/mobile/index.html">Buku Teks Sains Komputer T5</a>
+							</button>	
 						</h3>
 
-						<h3 class='m-5'>
-						<a class='text-dark' href="https://online.anyflip.com/wexi/bwqu/mobile/index.html">Buku Teks Sains Komputer T4</a>
+						<h3 class='m-3'>
+							<button class='btn btn-outline-light btn-large'>
+								<a class='text-dark' href="https://online.anyflip.com/wexi/bwqu/mobile/index.html">Buku Teks Sains Komputer T4</a>
+							</button>
+
 						</h3>
 				</div>
 			</div>
 		</div>
 
+		<button onclick="topFunction()" id="goToTopButton"><h style='position:relative;bottom:3px;'>^</h3></button>
 
+		<script>
+			//Get the button
+			var mybutton = document.getElementById("goToTopButton");
+
+			// When the user scrolls down 20px from the top of the document, show the button
+			window.onscroll = function() {scrollFunction()};
+
+			function scrollFunction() {
+			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				mybutton.style.display = "block";
+			} else {
+				mybutton.style.display = "none";
+			}
+			}
+
+			// When the user clicks on the button, scroll to the top of the document
+			function topFunction() {
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+			}
+		</script>
 	</body>
 
 </html>

@@ -14,6 +14,10 @@ $jawapan= $_POST['jawapan'];
 $guru= $_POST['guru'];
 $kuiz= $_POST['kuiz'];
 
+// for remembering the quiz of previous question registered
+session_start();
+$_SESSION['id_kuiz'] = $kuiz;
+
 $query ="insert into soalan values ('','$soalan','$jawapan','$guru','$kuiz')";
 if (mysqli_query($conn, $query)) {
 	echo '<script language="javascript">';
@@ -32,6 +36,7 @@ echo 'window.location="daftarsoalan.php"';
 echo'</script>'; 
 
 mysqli_close($conn);
+
 ?> 
 
 </body>

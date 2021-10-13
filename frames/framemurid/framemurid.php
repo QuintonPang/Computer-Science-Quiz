@@ -16,7 +16,7 @@ require('link_db.php');
 <title>.:: KUIZ SAINS KOMPUTER ::.</title>
 </head>
 
-<frameset rows = "10%,15%,70%,5%" border="0">
+<frameset rows = "5%,8.5%,82.5%,5%" border="0">
   <frame name="header" src="header.html" noresize>
   <frame name="mheader" src="pautanmurid.html" noresize>
   <frame name="body" src="bodymurid.html" noresize>

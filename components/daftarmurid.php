@@ -33,9 +33,8 @@ require('pengesahanguru.php');
 	
 	<br>
 	<br>
-	<label for="class"><b>Class</b></label>
-	
-	<br>
+	<label for="class"><b>Class: </b></label>
+
 	
 	<select name="class" placeholder="" required>
 
@@ -52,20 +51,19 @@ require('pengesahanguru.php');
 	
 	while ($row=mysqli_fetch_array($pilihstatus))
 	{
-			//SAMBUNG REKOD YANG BERKAITAN
-			$datakelas=mysqli_query($conn,"select * from kelas where idkelas='$no'");
-			$infokelas=mysqli_fetch_array($datakelas);
-	
 			
 
     
 
-	echo "<option value='".$infokelas['idkelas']."'>".$infokelas['namakelas']."</option>" ;
+		echo "<option value='".$row['idkelas']."'>".$row['namakelas']."</option>" ;
   
    
   
- $no++; } ?>
+ 		$no++; 
+ 	} ?>
 	</select> 
+
+	<br>
         
     <input class="button" align="center" name="SUBMIT" type="SUBMIT" value="DAFTAR MURID"/>
    <!--- <label>

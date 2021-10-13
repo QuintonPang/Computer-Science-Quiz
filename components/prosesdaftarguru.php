@@ -26,7 +26,7 @@ if (mysqli_query($conn, $query)) {
 
 }
 echo '<script language="javascript">';
-echo 'window.location="index.php"';
+echo 'window.location="daftarguru.php"';
 echo'</script>'; 
 
 mysqli_close($conn);

@@ -15,16 +15,16 @@ include ('link_db.php');
 <br>
 <br>
 <br>
-<p align="center"><strong style="font-size:25;font-family:cursive; border:0px">Log Masuk Guru</strong></p>
+<p align="center"><strong style="font-size:25;font-family:cursive; border-radius:5px">Log Masuk Guru</strong></p>
 
 <table style="border-spacing:20px; border:0px" align="center" >
  
     <td>Username:</td>
-    <td><input type="text" placeholder="Enter your username" name="username" size="30" style="border:0px"required /></td>
+    <td><input type="text" placeholder="Enter your username" name="username" size="30" style="border-radius:50px"required /></td>
   </tr>
   <tr>
     <td>Kata Laluan:</td>
-    <td><input type="password" placeholder="Enter your password" name="password" size="30"style="border:0px" required /></td>
+    <td><input type="password" placeholder="Enter your password" name="password" size="30"style="border-radius:50px" required /></td>
   </tr>
   
 </table>

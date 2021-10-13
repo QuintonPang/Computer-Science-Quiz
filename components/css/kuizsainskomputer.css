@@ -7,10 +7,14 @@ input[type=text], input[type=password], input[type=number] {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 0.5px solid #ccc;
   box-sizing: border-box;
 }
 
+input[type=submit]{
+  margin-top:20px;
+  margin-bottom:0px;
+}
 
 img{
 
@@ -31,13 +35,13 @@ div{
 }
 .button {
   background-color: #04AA6D;
-  align:center;
+  text-align:center;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 20%;
 }
 
 .button:hover {
@@ -45,10 +49,15 @@ div{
 }
 
 .cancelbtn {
-  align:center;
-  width: auto;
-  padding: 10px 18px;
+  text-align:center;
+  width: 20%;
+  cursor: pointer;
+  padding: 14px 20px;
   background-color: #f44336;
+}
+
+.cancelbtn:hover {
+  opacity: 0.8;
 }
 
 
@@ -112,7 +121,6 @@ backgroundAnimation{
     background: linear-gradient(var(--c1),var(--c2));
     animation: backgroundAnimation 8s;
     animation-iteration-count: infinite;
-    co
 }
 
 /* Change styles for span and cancel button on extra small screens */

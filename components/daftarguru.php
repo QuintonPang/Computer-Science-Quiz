@@ -14,7 +14,7 @@ include('link_db.php');
 
 <form action="prosesdaftarguru.php" method="post">
   <div class="imgcontainer">
-    <img src="imgs/teacher.png" alt="Avatar" class="avatar">
+    <img src="imgs/teacher.png" alt="Avatar" class="avatar" style='height:300px;'>
   </div>
 
   <div class="container">
@@ -30,7 +30,7 @@ include('link_db.php');
     </label> --->
   </div>
 
-  <div class="container" style="background-color:#f1f1f1">
+  <div class="container">
     <a href="index.php"><button type="button" class="cancelbtn">Cancel</button></a>
     
   </div>
