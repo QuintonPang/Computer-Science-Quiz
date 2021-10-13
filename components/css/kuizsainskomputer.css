@@ -1,6 +1,6 @@
 
 body {font-family: Arial, Helvetica, sans-serif;}
-form {border: 3px solid #f1f1f1;}
+form {border: 0px solid #f1f1f1;}
 
 input[type=text], input[type=password], input[type=number] {
   width: 100%;
@@ -75,8 +75,44 @@ span.psw {
 .recordFound{
 
 	font-family:cursive;
-	color:red;"
+	color:red;
 
+}
+
+/* modifying color attribute*/
+@property 
+--c1{
+    syntax: '<color>';
+    inherits: false;
+    initial-value:red;
+}
+
+@property 
+--c2{
+    syntax: '<color>';
+    inherits: false;
+    initial-value:orange;
+}
+
+@keyframes
+backgroundAnimation{
+    0%{ --c1: red; --c2:orange;}
+    14.3%{--c1: orange; --c2:yellow;}
+    28.6%{--c1: yellow; --c2:green;}
+    42.9%{--c1: green; --c2:blue;}
+    57.1%{--c1: blue; --c2:indigo;}
+    71.4%{--c1: indigo; --c2:purple;}
+    85.7%{--c1: purple; --c2:red;}
+    100%{ --c1: red; --c2:orange;}
+}
+
+#background{
+    cursor:pointer;
+    transition: --c 0.5s;
+    background: linear-gradient(var(--c1),var(--c2));
+    animation: backgroundAnimation 8s;
+    animation-iteration-count: infinite;
+    co
 }
 
 /* Change styles for span and cancel button on extra small screens */

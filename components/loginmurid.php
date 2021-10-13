@@ -9,21 +9,21 @@ include ('link_db.php');
 <title>Log Masuk Murid</title>
 </head>
 
-<body>
+<body id='background'>
 
-<form action="prosesloginmurid.php" method="post"> 
+<form style='border:0px;' action="prosesloginmurid.php" method="post"> 
 <br>
 <br>
 <br>
-<p align="center"><strong style="font-size:25;font-family:cursive;background:white; border-radius:5px">Log Masuk Murid</strong></p>
+<p align="center"><strong style="font-size:25;font-family:cursive; border-radius:5px">Log Masuk Murid</strong></p>
 
-<table style="border-spacing:20px; background:white; border-radius:5px"align="center" border="0">
+<table style="border-spacing:20px;border:0px;" align="center">
  
     <td>Username:</td>
     <td><input type="text" placeholder="Enter your username" name="username" size="30" style="border-radius:50px"required /></td>
   </tr>
   <tr>
-    <td>Kata Laluan:</td>
+    <td >Kata Laluan:</td>
     <td><input type="password" placeholder="Enter your password" name="password" size="30"style="border-radius:50px" required /></td>
   </tr>
   
@@ -35,7 +35,8 @@ include ('link_db.php');
 
 </form>
 
-<form align="center" name="form1" method="post" action="../">
-				<button class="cancelbtn" align="center">Kembali ke Menu Utama</button><br><br> </form>
+<form align="center" style='border:0px;' name="form1" method="post" action="../">
+				<button class="cancelbtn" align="center">Kembali ke Menu Utama</button><br><br> 
+</form>
 </body>
 </html>
